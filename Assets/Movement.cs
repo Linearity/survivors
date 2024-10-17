@@ -8,7 +8,7 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+       Debug.Log("Movement start"); 
     }
 
     // Update is called once per frame
