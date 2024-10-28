@@ -9,7 +9,6 @@ public class Damage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       Debug.Log("Damage start"); 
     }
 
     // Update is called once per frame
@@ -25,7 +24,6 @@ public class Damage : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("OnCollisionEnter2D");
         // if (isEnemy(col.gameObject)) {
         currentHealth -= 1.0;
         // }
