@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Damage : MonoBehaviour
 {
-    public double currentHealth = 100.0;
+    public double currentHealth = 3.0;
 
     // Start is called before the first frame update
     void Start()
@@ -14,7 +15,11 @@ public class Damage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+    }
+
+    private IEnumerator GameOver() {
+        yield return SceneManager.UnloadSceneAsync("SampleScene");
+        SceneManager.LoadScene("GameOver");
     }
 
     public void TestOnTriggerEnter2D() {
@@ -27,5 +32,10 @@ public class Damage : MonoBehaviour
         // if (isEnemy(col.gameObject)) {
         currentHealth -= 1.0;
         // }
+        if (currentHealth <= 0) {
+            SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+            // var coroutine = GameOver();
+            // StartCoroutine(coroutine);
+        }
     }
 }
