@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Damage : MonoBehaviour
 {
     public double currentHealth = 3.0;
+    public double totalHealth = 3.0;
 
     // Start is called before the first frame update
     void Start()
